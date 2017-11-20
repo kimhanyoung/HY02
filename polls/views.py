@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse
 # Create your views here.
 from polls.models import Choice, Question
 
+
 def index(request):
     latest_question_list = Question.objects.all().order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}

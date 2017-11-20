@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 from django.db import models
 #import datetime
 #from django.utils import timezone
@@ -16,8 +18,15 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 
 
+    def __unicode__(self):              # __str__ on Python 3
+        return self.choice_text
+
+
+
+class Inges(models.Model):
+    inges_text = models.CharField(max_length=200, verbose_name = "학교",)
 
 
 
     def __unicode__(self):              # __str__ on Python 3
-        return self.choice_text
+        return self.inges_text
